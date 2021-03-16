@@ -1,7 +1,11 @@
 window.onload=function(){
-    let almanax = document.getElementById("almanax");
-    let offrande = document.createElement("p")
-    offrande.append("Offrande")
-    almanax.appendChild(offrande)
-    console.log(offrande)
+    loadAlmanax()
+}
+
+function loadAlmanax(){
+    let request = new XMLHttpRequest();
+    request.open("GET","http://www.krosmoz.com/fr/almanax",true)
+    request.send();
+    let response = request.responseText;
+    response.
 }
