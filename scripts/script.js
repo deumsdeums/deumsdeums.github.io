@@ -1,10 +1,7 @@
-document.onload=function(){
+window.onload=function(){
     let almanax = document.getElementById("almanax");
     let offrande = document.createElement("p")
     offrande.append("Offrande")
     almanax.appendChild(offrande)
     console.log(offrande)
-}
-window.onload=function(){
-    console.log("load")
 }
