@@ -3,5 +3,5 @@ window.onload=function(){
 }
 
 function loadAlmanax(){
-    fetch("localhost:8080/almanax").then(response => console.log(response))
+    fetch("https://deumsserver.herokuapp.com/almanax").then(response => console.log(response))
 }
