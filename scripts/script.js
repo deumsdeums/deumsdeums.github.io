@@ -4,8 +4,8 @@ window.onload=function(){
 
 function loadAlmanax(){
     let request = new XMLHttpRequest();
-    request.open("GET","http://www.krosmoz.com/fr/almanax",true)
+    request.open("GET","127.0.0.1:8080/almanax",true)
     request.send();
-    let response = request.responseText;
-    response.
+    let response = request.response;
+    console.log("réponse: "+response);
 }
