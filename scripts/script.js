@@ -5,3 +5,6 @@ document.onload=function(){
     almanax.appendChild(offrande)
     console.log(offrande)
 }
+window.onload=function(){
+    console.log("load")
+}
