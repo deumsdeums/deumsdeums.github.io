@@ -3,6 +3,5 @@ document.onload=function(){
     let offrande = document.createElement("p")
     offrande.append("Offrande")
     almanax.appendChild(offrande)
-
-    
+    console.log(offrande)
 }
