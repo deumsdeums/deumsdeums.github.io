@@ -4,8 +4,13 @@ window.onload=function(){
 
 function loadAlmanax(){
     let request = new XMLHttpRequest();
-    request.open("GET","127.0.0.1:8080/almanax",true)
+    request.onreadystatechange=function(){
+        console.log("Etat "+this.readyState +" Code : "+this.status)
+        if(this.readyState==4&&this.status==200){
+            console.log(this.response);
+        }
+    }
+    request.open("GET","localhost:8080/almanax",true)
     request.send();
-    let response = request.response;
-    console.log("réponse: "+response);
+
 }
