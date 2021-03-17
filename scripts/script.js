@@ -22,8 +22,6 @@ function loadAlmanax(){
 function loadPortals(){
     fetch("https://deumsserver.herokuapp.com/portals/59").then(response =>response.json())
     .then(portals=>{
-        portals.forEach(portal => {
-            console.log(portals)
-        });
+        console.log(portals)
     })
 }
