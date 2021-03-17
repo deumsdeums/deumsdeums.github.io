@@ -27,7 +27,6 @@ function loadPortals(){
 
             let position = document.createElement("h3").textContent=portal['position']
             let utilisation = document.createElement("h3").textContent=portal['utilisation']
-            let maj = document.createElement("h3").textContent=portal['maj']
 
             place.querySelector('.position').append(position)
             place.querySelector('.utilisation').append(utilisation)
