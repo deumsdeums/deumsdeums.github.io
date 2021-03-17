@@ -1,7 +1,12 @@
-window.onload=function(){
+$(document).ready(function(){
     loadAlmanax()
     loadPortals()
-}
+    $('.position').click(function(){
+        navigator.clipboard.writeText($(this).text())
+    })
+})
+
+
 
 function loadAlmanax(){
     fetch("https://deumsserver.herokuapp.com/almanax").then(response => response.json())

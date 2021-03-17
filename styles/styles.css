@@ -2,3 +2,6 @@ body{
     background-color: #474747;
     color:white;
 }
+.position:hover{
+    cursor:pointer
+}
