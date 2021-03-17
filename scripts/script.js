@@ -22,6 +22,14 @@ function loadAlmanax(){
 function loadPortals(){
     fetch("https://deumsserver.herokuapp.com/portals/59").then(response =>response.json())
     .then(portals=>{
-        console.log(portals)
+        portals.forEach(portal => {
+            let place = document.getElementById(portal['dimension'])
+
+            let position = document.createElement("h3").textContent=portal['position']
+            let utilisation = document.createElement("h3").textContent=portal['utilisation']
+
+            place.querySelector('.position').textContent=position
+            place.querySelector('.utilisation').textContent=utilisation
+        });
     })
 }
