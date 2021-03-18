@@ -27,9 +27,10 @@ function loadAlmanax(){
     
 }
 function loadServer(){
-    fetch("https://deumsserver.herokupapp.com/serveurs").then(response=>response.json())
+    fetch("https://deumsserver.herokuapp.com/serveurs").then(response=>response.json())
     .then(serveurs =>{
         serveurs.forEach(serveur =>{
+            $('#serverselector').append("<option value="+serveur.id+">"+serveur.name+"</option>")
             console.log(serveur)
         })
     })
