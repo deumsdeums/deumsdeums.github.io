@@ -1,7 +1,11 @@
 $(document).ready(function(){
     loadAlmanax()
-    loadPortals()
-
+    loadServer()
+    $('#serverselector').change(function(){
+        let id = $(this).find(':selected').val()
+        $(".portal").empty()
+        loadPortals(id)
+    })
 })
 
 
@@ -22,8 +26,16 @@ function loadAlmanax(){
     })
     
 }
-function loadPortals(){
-    fetch("https://deumsserver.herokuapp.com/portals/59").then(response =>response.json())
+function loadServer(){
+    fetch("https://deumsserver.herokupapp.com/serveurs").then(response=>response.json())
+    .then(serveurs =>{
+        serveurs.forEach(serveur =>{
+            console.log(serveur)
+        })
+    })
+}
+function loadPortals(id){
+    fetch("https://deumsserver.herokuapp.com/portals/"+id).then(response =>response.json())
     .then(portals=>{
         portals.forEach(portal => {
             if(portal.position==0){
