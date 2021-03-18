@@ -1,9 +1,7 @@
 $(document).ready(function(){
     loadAlmanax()
     loadPortals()
-    $('.position').click(function(){
-        navigator.clipboard.writeText($(this).text())
-    })
+
 })
 
 
@@ -28,15 +26,21 @@ function loadPortals(){
     fetch("https://deumsserver.herokuapp.com/portals/59").then(response =>response.json())
     .then(portals=>{
         portals.forEach(portal => {
-            let place = document.getElementById(portal['dimension'])
+            if(portal.position==0){
+                portal.position="INCONNUE"
+                portal.utilisation=""
+                portal.maj=""
 
-            let position = document.createElement("h3").textContent=portal['position']
-            let utilisation = document.createElement("h3").textContent=portal['utilisation']
-
-            place.querySelector('.position').append(position)
-            place.querySelector('.utilisation').append(utilisation)
-            place.querySelector('.maj').textContent=portal['maj']
-
+            }
+            $('.portal').append(buildPortalCard(portal))
         });
     })
+}
+
+function buildPortalCard(portal){
+   return '<div class="card text-white bg-dark mb-3 col" id="'+portal.dimension+'"><h2>'+portal.dimension+'</h2><div class="img"></div> <div class="card-body"><b onClick="copyPos(this)" data-toggle="tooltip" title="Copier" class="position">'+portal.position+'</b> Utilisations : <b class="utilisation" style="color:green">'+portal.utilisation+'</b></div><div class="card-footer">Mise à jour :<br><i class="maj">'+portal.maj+'</i></div></div>'
+}
+function copyPos(elem){
+    navigator.clipboard.writeText(elem.textContent)
+
 }
