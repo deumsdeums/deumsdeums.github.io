@@ -31,7 +31,6 @@ function loadServer(){
     .then(serveurs =>{
         serveurs.forEach(serveur =>{
             $('#serverselector').append("<option value="+serveur.id+">"+serveur.name+"</option>")
-            console.log(serveur)
         })
     })
 }
