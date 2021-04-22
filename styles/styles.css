@@ -8,3 +8,6 @@ body{
 .position:hover{
     cursor:pointer
 }
+.card{
+    margin-top:10px
+}
